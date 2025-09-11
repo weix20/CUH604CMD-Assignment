@@ -89,4 +89,3 @@ Students often need quick, customized clarifications on course concepts. We aim 
 - **Ethics & Risks:** see Section 7
 - **Maintainer & Contact:** *Your name/email*
 
-## 10. Repo Structure
