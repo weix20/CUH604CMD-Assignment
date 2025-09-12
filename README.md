@@ -34,6 +34,13 @@
 
 # Project 2 — Fine-tuned Academic Tutor (5000CMD: Theory of Computation)
 
+## Environment Setup Notes 
+The initial environment setup cell (`pip install ...`) may **occasionally fail** on Colab or GitHub.  
+This is usually caused by **network issues** or **temporary unavailability of package mirrors**, not by code errors.  
+Simply re-running the cell normally resolves the problem.  
+The fixed package versions are specified to ensure **reproducibility** once installation succeeds.  
+
+## Project Overview
 This project fine-tunes a compact causal language model (**distilgpt2**) on curated text from Coventry University’s **5000CMD (Theory of Computation)** pages to generate concise, topic-aligned explanations and examples (e.g., DFAs, regular languages). It demonstrates the full AI development lifecycle: data collection, preprocessing, model selection, fine-tuning, evaluation, and ethical considerations.
 
 ## 1. Problem Identification
