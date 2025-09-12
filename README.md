@@ -1,28 +1,35 @@
-# Project 1 – Binary Classification with FNN
+## Project 1 – Binary Classification with FNN
 
 ## Task
-- Predict a binary label (0 or 1) from 15 binary-valued features.  
-- Dataset: `data.csv`  
+- Predict a binary label (`y ∈ {0,1}`) from 15 binary features  
+- Dataset: `data.csv`
+
+## Data Preparation
+- Train/test split: 80/20, with `stratify=y` and `random_state=24`  
+- Features standardized using `StandardScaler` (fit on training set)
 
 ## Model
-- Architecture: **Feedforward Neural Network (FNN)**  
+- Feedforward Neural Network (Dense MLP)  
 - Hidden layers: Dense + ReLU  
 - Output layer: Sigmoid  
 - Regularization: Dropout  
 
 ## Training
 - Optimizer: Adam  
-- Loss function: Binary Crossentropy  
-- Input preprocessing: StandardScaler  
-- Evaluation metric: Accuracy  
+- Loss: Binary cross-entropy  
+- Batch size: 32  
+- Epochs: up to 50 with EarlyStopping (`val_loss`, `patience=5`, `restore_best_weights=True`)  
 
-## Experiments
+## Hyperparameters
+- **Model 1:** 3×64, dropout 0.2, lr=0.001  
+- **Model 2:** 4×128, dropout 0.3, lr=0.0005  
+- **Model 3:** 2×32, dropout 0.1, lr=0.002  
 
-- Trained **three models** with different hyperparameters (layers, neurons, dropout, learning rate).  
-- Selected the **best-performing model** based on test accuracy.  
+## Evaluation
+- Metrics: Accuracy, Precision, Recall, F1-score, ROC AUC  
+- ROC AUC computed from predicted probabilities  
+- Best model selected by test accuracy (tie-breaker: F1/ROC AUC)  
 
-## Results
-- Final model achieves the highest accuracy among the three candidates.  
 
 
 # Project 2 — Fine-tuned Academic Tutor (5000CMD: Theory of Computation)
